@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { Section } from "./section"
 import { useI18n } from "@/lib/i18n"
-import { GraduationCap, Award, Briefcase } from "lucide-react"
+import { GraduationCap, Award } from "lucide-react"
 
 interface TimelineItem {
   year: string
@@ -12,7 +12,7 @@ interface TimelineItem {
   description?: { pt: string; en: string }
   status?: { pt: string; en: string }
   icon: typeof GraduationCap
-  category: "education" | "certifications" | "experience"
+  category: "education" | "certifications"
 }
 
 const timeline: TimelineItem[] = [
@@ -51,33 +51,7 @@ const timeline: TimelineItem[] = [
     category: "certifications",
   },
   {
-    year: "2023",
-    title: {
-      pt: "Gestao Financeira",
-      en: "Financial Management",
-    },
-    subtitle: {
-      pt: "CA",
-      en: "CA",
-    },
-    icon: Award,
-    category: "certifications",
-  },
-  {
-    year: "2023",
-    title: {
-      pt: "Atendimento ao Cliente",
-      en: "Customer Service",
-    },
-    subtitle: {
-      pt: "Sebrae",
-      en: "Sebrae",
-    },
-    icon: Award,
-    category: "certifications",
-  },
-  {
-    year: "",
+    year: "2020-2025",
     title: {
       pt: "Ciencias da Natureza",
       en: "Natural Sciences",
@@ -93,46 +67,11 @@ const timeline: TimelineItem[] = [
     icon: GraduationCap,
     category: "education",
   },
-  {
-    year: "",
-    title: {
-      pt: "Atendente",
-      en: "Sales Associate",
-    },
-    subtitle: {
-      pt: "Sol & Neve",
-      en: "Sol & Neve",
-    },
-    description: {
-      pt: "Atendimento ao publico, conhecimento de caixa e suporte operacional.",
-      en: "Customer service, cashier operations and operational support.",
-    },
-    icon: Briefcase,
-    category: "experience",
-  },
-  {
-    year: "",
-    title: {
-      pt: "Assistente Administrativo",
-      en: "Administrative Assistant",
-    },
-    subtitle: {
-      pt: "Studio de Beleza Claudia",
-      en: "Studio de Beleza Claudia",
-    },
-    description: {
-      pt: "Atendimento ao cliente, administracao de agenda e organizacao do ambiente.",
-      en: "Customer service, schedule management and workspace organization.",
-    },
-    icon: Briefcase,
-    category: "experience",
-  },
 ]
 
 const categoryIcons = {
   education: GraduationCap,
   certifications: Award,
-  experience: Briefcase,
 }
 
 export function Journey() {
@@ -141,7 +80,6 @@ export function Journey() {
   const categories = [
     { key: "education" as const, label: t.journey.education },
     { key: "certifications" as const, label: t.journey.certifications },
-    { key: "experience" as const, label: t.journey.experience },
   ]
 
   return (
